@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at 30% 20%, #1e5be0, #0d1b4c 60%, #0a0f2d 100%);
+  background-attachment: fixed;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #0a1a3c;
+  padding: 1rem;
+  text-align: center;
+}
+
+header.empresa-ativo h2 span {
+  color: #ff4d4d;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+section {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: radial-gradient(circle at 30% 20%, #02f89a, #01c17e 60%, #028e5d 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  transition: background 0.5s;
+}
+
+article.empresa-ativo {
+  background: radial-gradient(circle at 30% 20%, #f54242, #c11a1a 60%, #8b0000 100%);
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #08e640, #19be03, #017107);
+  z-index: -1;
+  opacity: 0.5;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+  transition: background 0.5s;
+}
+
+article.empresa-ativo::before {
+  background: linear-gradient(135deg, #ff6b6b, #ff1a1a, #8b0000);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+h2 span {
+  color: #22cf28;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form label {
+  font-weight: bold;
+}
+
+.login-form input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn {
+  background: rgba(9, 205, 16, 0.932);
+  color: #fff;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: rgb(0, 255, 26);
+}
+
+article.empresa-ativo .btn {
+  background: rgba(245, 66, 66, 0.9);
+}
+
+article.empresa-ativo .btn:hover {
+  background: rgb(255, 30, 30);
+}
+
+.switch-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.erro {
+  color: #ff4d4d;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.registro {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.registro a {
+  color: #04f304;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+article.empresa-ativo .registro a {
+  color: #ff9999;
+}
+
+.registro a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #0a1a3c;
+  font-size: 0.9rem;
+}

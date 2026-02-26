@@ -1,0 +1,228 @@
+:root {
+  --cor-principal: #0d47a1;
+  --cor-principal-escura: #072c6c;
+  --cor-fundo: #0a0f1f;
+  --cor-cartao-fundo: rgba(255, 255, 255, 0.08);
+  --cor-borda-vidro: rgba(255, 255, 255, 0.2);
+  --cor-texto-principal: #ffffff;
+  --cor-destaque: #04bcfa;
+  --cor-erro: #ef5350;
+  --cor-sucesso: #00e676;
+  --sombra: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --transicao: 0.3s ease-in-out;
+  --radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, #1e5be0, #0d1b4c 60%, #0a0f2d 100%);
+  background-attachment: fixed;
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(10, 26, 60, 0.85);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--cor-destaque);
+  font-size: 1.6rem;
+}
+
+header a {
+  color: var(--cor-texto-principal);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transicao);
+}
+
+header a:hover {
+  color: var(--cor-destaque);
+}
+
+.perfil-container {
+  width: 90%;
+  max-width: 1100px;
+  background: var(--cor-cartao-fundo);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--cor-borda-vidro);
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  margin-top: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.perfil-topo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.perfil-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--cor-destaque);
+  background: linear-gradient(135deg, #04bcfa44, #ffffff22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--cor-destaque);
+}
+
+.perfil-info h2 {
+  margin-bottom: 0.3rem;
+  color: var(--cor-destaque);
+}
+
+.perfil-info p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.secao {
+  margin-bottom: 2rem;
+}
+
+.secao h3 {
+  color: #90caf9;
+  border-left: 4px solid var(--cor-destaque);
+  padding-left: 10px;
+  margin-bottom: 1rem;
+}
+
+.info-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.info-item {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item strong {
+  display: block;
+  color: var(--cor-destaque);
+  margin-bottom: 0.3rem;
+}
+
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+button,
+a.botao {
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.botao-editar {
+  background: var(--cor-destaque);
+  color: #0a0f2d;
+  box-shadow: 0 0 10px rgba(4, 188, 250, 0.5);
+}
+
+.botao-editar:hover {
+  background: #008cff;
+  box-shadow: 0 0 15px rgba(4, 188, 250, 0.8);
+}
+
+.botao-excluir {
+  background: transparent;
+  color: var(--cor-erro);
+  border: 1px solid var(--cor-erro);
+}
+
+.botao-excluir:hover {
+  background: var(--cor-erro);
+  color: #fff;
+}
+
+.botao-vagas {
+  background: rgba(4, 188, 250, 0.2);
+  color: var(--cor-destaque);
+  border: 1px solid var(--cor-destaque);
+}
+
+.botao-vagas:hover {
+  background: rgba(4, 188, 250, 0.4);
+  box-shadow: 0 0 10px rgba(4, 188, 250, 0.5);
+}
+
+.msg-sucesso {
+  color: var(--cor-sucesso);
+  background: rgba(0, 230, 118, 0.1);
+  border: 1px solid var(--cor-sucesso);
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.msg-erro {
+  color: var(--cor-erro);
+  background: rgba(239, 83, 80, 0.1);
+  border: 1px solid var(--cor-erro);
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  background: rgba(10, 26, 60, 0.85);
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+  margin-top: 3rem;
+}

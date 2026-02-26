@@ -1,0 +1,159 @@
+Candidaturas:
+CREATE TABLE candidaturas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_vaga INT NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    idade TINYINT,
+    deficiencia VARCHAR(50),
+    experiencia TEXT,
+    motivo TEXT NOT NULL,
+    personalidade VARCHAR(255),
+    linkedin VARCHAR(255),
+    github VARCHAR(255),
+    data_candidatura DATETIME NOT NULL
+    );
+
+Usuários:
+CREATE TABLE usuarios (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    rg VARCHAR(20),
+    data_nascimento DATE,
+    genero VARCHAR(20),
+    estado_civil VARCHAR(30),
+    endereco VARCHAR(200),
+    telefone VARCHAR(30),
+    curso VARCHAR(50) NOT NULL,
+    instituicao VARCHAR(150),
+    periodo VARCHAR(30),
+    turno VARCHAR(30),
+    matricula VARCHAR(30),
+    conclusao DATE,
+    experiencia TEXT,
+    cursos_complementares TEXT,
+    idiomas TEXT,
+    competencias_tecnicas TEXT,
+    competencias_comportamentais TEXT,
+    area_interesse VARCHAR(100),
+    modalidade VARCHAR(50),
+    carga_horaria VARCHAR(20),
+    pretensao_bolsa VARCHAR(50),
+    cidade_preferencia VARCHAR(100),
+    foto perfil VARCHAR(255),
+    data_cadastro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+vagas completa:
+CREATE TABLE vagas_completa (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    titulo_vaga VARCHAR(500) NOT NULL,
+    empresa VARCHAR(100) NOT NULL,
+    descricao_vaga TEXT NOT NULL,
+    linguagem VARCHAR(50) NOT NULL,
+    requisitos TEXT,
+    beneficios TEXT,
+    tipo_contrato ENUM('Estágio', 'CLT', 'PJ', 'Temporário') DEFAULT 'Estágio',
+    carga_horaria VARCHAR(50),
+    localidade VARCHAR(100) NOT NULL,
+    modalidade ENUM('Presencial', 'Híbrido', 'Remoto') DEFAULT 'Presencial',
+    remunerado TINYINT(1) DEFAULT 0,
+    salario DECIMAL(10, 2),
+    email_contato VARCHAR(100),
+    site_empresa VARCHAR(150),
+    telefone VARCHAR(20),
+    data_postagem DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO vagas_completa 
+(id, titulo_vaga, empresa, descricao_vaga, linguagem, requisitos, beneficios, tipo_contrato, carga_horaria, localidade, modalidade, remunerado, salario, email_contato, site_empresa, telefone, data_postagem) 
+VALUES
+
+(1, 'Estágio em Python - São Paulo', 'TechMind Solutions', 'Atuação em projetos de backend e automação com Python.', 'Python', 'Conhecimentos básicos em Python, lógica de programação e Git.', 'Bolsa auxílio, VT, possibilidade de efetivação.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 1, 1800.00, 'contato@techmindsolutions.com', 'https://www.techmindsolutions.com', '(11) 99999-0000', '2025-10-18 00:14:01'),
+(2, 'Estágio em Python - Remoto', 'TechMind Solutions', 'Suporte em desenvolvimento de aplicações Python em ambiente remoto.', 'Python', 'Conhecimentos básicos em Python, lógica de programação e Git.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 1900.00, 'contato@techmindsolutions.com', 'https://www.techmindsolutions.com', '(11) 99999-0000', '2025-10-18 08:00:00'),
+(3, 'Estágio em Java - São Paulo', 'TechMind Solutions', 'Auxílio em manutenção de sistemas Java.', 'Java', 'Conhecimentos básicos em Java, orientação a objetos e Git.', 'Experiência prática, VT.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@techmindsolutions.com', 'https://www.techmindsolutions.com', '(11) 99999-0000', '2025-10-18 10:30:00'),
+(4, 'Estágio em SQL - Rio de Janeiro', 'TechMind Solutions', 'Suporte em consultas e modelagem de banco de dados.', 'SQL', 'Conhecimentos básicos em SQL, modelagem relacional.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Rio de Janeiro - RJ', 'Presencial', 1, 2000.00, 'contato@techmindsolutions.com', 'https://www.techmindsolutions.com', '(21) 98888-0000', '2025-10-19 12:00:00'),
+(5, 'Estágio em Python - Belo Horizonte', 'TechMind Solutions', 'Atuação em scripts e automação com Python.', 'Python', 'Conhecimentos básicos em Python, lógica de programação.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Belo Horizonte - MG', 'Presencial', 1, 1850.00, 'contato@techmindsolutions.com', 'https://www.techmindsolutions.com', '(31) 97777-0000', '2025-10-19 15:45:00'),
+
+
+(6, 'Estágio em Kotlin - Curitiba', 'InovaDev', 'Desenvolvimento mobile com Kotlin.', 'Kotlin', 'Conhecimentos básicos em Kotlin e Android Studio.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Curitiba - PR', 'Presencial', 1, 1500.00, 'contato@inovadev.com', 'https://www.inovadev.com', '(41) 96666-0000', '2025-10-18 00:14:01'),
+(7, 'Estágio em Kotlin - Curitiba', 'InovaDev', 'Apoio em manutenção de aplicativos Android.', 'Kotlin', 'Conhecimentos básicos em Kotlin, Android SDK.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Curitiba - PR', 'Presencial', 1, 1600.00, 'contato@inovadev.com', 'https://www.inovadev.com', '(41) 96666-0000', '2025-10-18 11:15:00'),
+(8, 'Estágio em Java - Remoto', 'InovaDev', 'Participação em projetos backend com Java.', 'Java', 'Conhecimentos básicos em Java, orientação a objetos.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 1750.00, 'contato@inovadev.com', 'https://www.inovadev.com', '(41) 96666-0000', '2025-10-18 14:00:00'),
+(9, 'Estágio em Kotlin - São Paulo', 'InovaDev', 'Auxílio em desenvolvimento mobile.', 'Kotlin', 'Conhecimentos básicos em Kotlin.', 'Experiência prática.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@inovadev.com', 'https://www.inovadev.com', '(11) 95555-0000', '2025-10-19 08:45:00'),
+(10, 'Estágio em JavaScript - Porto Alegre', 'InovaDev', 'Atuação em front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript, HTML e CSS.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Porto Alegre - RS', 'Presencial', 1, 1550.00, 'contato@inovadev.com', 'https://www.inovadev.com', '(51) 94444-0000', '2025-10-19 16:30:00'),
+
+(11, 'Estágio em Java - Rio de Janeiro', 'CodeWave Labs', 'Auxílio em manutenção de sistemas Java.', 'Java', 'Conhecimentos básicos em Java e Git.', 'Experiência prática.', 'Estágio', '30h semanais', 'Rio de Janeiro - RJ', 'Presencial', 0, NULL, 'contato@codewavelabs.com', 'https://www.codewavelabs.com', '(21) 93333-0000', '2025-10-18 00:14:01'),
+(12, 'Estágio em Java - Rio de Janeiro', 'CodeWave Labs', 'Atuação em projetos backend com Java.', 'Java', 'Conhecimentos básicos em Java e orientação a objetos.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Rio de Janeiro - RJ', 'Presencial', 1, 2000.00, 'contato@codewavelabs.com', 'https://www.codewavelabs.com', '(21) 93333-0000', '2025-10-18 09:40:00'),
+(13, 'Estágio em C++ - São Paulo', 'CodeWave Labs', 'Auxílio em desenvolvimento de sistemas em C++.', 'C++', 'Conhecimentos básicos em C++ e lógica de programação.', 'Experiência prática.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@codewavelabs.com', 'https://www.codewavelabs.com', '(11) 92222-0000', '2025-10-18 13:20:00'),
+(14, 'Estágio em Java - Remoto', 'CodeWave Labs', 'Participação em projetos Java em ambiente remoto.', 'Java', 'Conhecimentos básicos em Java.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 2100.00, 'contato@codewavelabs.com', 'https://www.codewavelabs.com', '(21) 93333-0000', '2025-10-19 11:15:00'),
+(15, 'Estágio em Python - Recife', 'CodeWave Labs', 'Auxílio em scripts e automação com Python.', 'Python', 'Conhecimentos básicos em Python.', 'Experiência prática.', 'Estágio', '30h semanais', 'Recife - PE', 'Presencial', 0, NULL, 'contato@codewavelabs.com', 'https://www.codewavelabs.com', '(81) 91111-0000', '2025-10-19 17:00:00'),
+
+(16, 'Estágio em C++ - Porto Alegre', 'NextGen Systems', 'Atuação em desenvolvimento de sistemas C++.', 'C++', 'Conhecimentos básicos em C++.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Porto Alegre - RS', 'Presencial', 1, 2200.00, 'contato@nextgensystems.com', 'https://www.nextgensystems.com', '(51) 98888-0000', '2025-10-18 00:14:01'),
+(17, 'Estágio em C++ - Porto Alegre', 'NextGen Systems', 'Auxílio em manutenção de sistemas C++.', 'C++', 'Conhecimentos básicos em C++.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Porto Alegre - RS', 'Presencial', 1, 2300.00, 'contato@nextgensystems.com', 'https://www.nextgensystems.com', '(51) 98888-0000', '2025-10-18 10:00:00'),
+(18, 'Estágio em Python - Remoto', 'NextGen Systems', 'Participação em projetos Python em ambiente remoto.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 2250.00, 'contato@nextgensystems.com', 'https://www.nextgensystems.com', '(51) 98888-0000', '2025-10-18 15:00:00'),
+(19, 'Estágio em C++ - Florianópolis', 'NextGen Systems', 'Auxílio em desenvolvimento de sistemas C++.', 'C++', 'Conhecimentos básicos em C++.', 'Experiência prática.', 'Estágio', '30h semanais', 'Florianópolis - SC', 'Presencial', 0, NULL, 'contato@nextgensystems.com', 'https://www.nextgensystems.com', '(48) 97777-0000', '2025-10-19 09:00:00'),
+(20, 'Estágio em Go - São Paulo', 'NextGen Systems', 'Atuação em projetos backend com Go.', 'Go', 'Conhecimentos básicos em Go.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 1, 2400.00, 'contato@nextgensystems.com', 'https://www.nextgensystems.com', '(11) 96666-0000', '2025-10-19 14:10:00'),
+
+(21, 'Estágio em JavaScript - Recife', 'SoftLink IT', 'Auxílio em desenvolvimento front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript, HTML e CSS.', 'Experiência prática.', 'Estágio', '30h semanais', 'Recife - PE', 'Presencial', 0, NULL, 'contato@softlinkit.com', 'https://www.softlinkit.com', '(81) 95555-0000', '2025-10-18 00:14:01'),
+(22, 'Estágio em JavaScript - Recife', 'SoftLink IT', 'Atuação em projetos front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Recife - PE', 'Presencial', 1, 1650.00, 'contato@softlinkit.com', 'https://www.softlinkit.com', '(81) 95555-0000', '2025-10-18 12:30:00'),
+(23, 'Estágio em Java - Belo Horizonte', 'SoftLink IT', 'Auxílio em manutenção de sistemas Java.', 'Java', 'Conhecimentos básicos em Java.', 'Experiência prática.', 'Estágio', '30h semanais', 'Belo Horizonte - MG', 'Presencial', 0, NULL, 'contato@softlinkit.com', 'https://www.softlinkit.com', '(31) 94444-0000', '2025-10-18 16:15:00'),
+(24, 'Estágio em JavaScript - Remoto', 'SoftLink IT', 'Participação em projetos front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 1700.00, 'contato@softlinkit.com', 'https://www.softlinkit.com', '(81) 95555-0000', '2025-10-19 10:30:00'),
+(25, 'Estágio em SQL - São Paulo', 'SoftLink IT', 'Auxílio em consultas SQL e modelagem de dados.', 'SQL', 'Conhecimentos básicos em SQL.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 1, 1500.00, 'contato@softlinkit.com', 'https://www.softlinkit.com', '(11) 93333-0000', '2025-10-19 18:00:00'),
+
+(26, 'Estágio em SQL - Belo Horizonte', 'DataWorks Analytics', 'Atuação em consultas SQL e relatórios.', 'SQL', 'Conhecimentos básicos em SQL.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Belo Horizonte - MG', 'Presencial', 1, 1700.00, 'contato@dataworks.com', 'https://www.dataworks.com', '(31) 92222-0000', '2025-10-18 00:14:01'),
+(27, 'Estágio em SQL - Belo Horizonte', 'DataWorks Analytics', 'Auxílio em modelagem de banco de dados.', 'SQL', 'Conhecimentos básicos em SQL.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Belo Horizonte - MG', 'Presencial', 1, 1800.00, 'contato@dataworks.com', 'https://www.dataworks.com', '(31) 92222-0000', '2025-10-18 09:00:00'),
+(28, 'Estágio em Python - Remoto', 'DataWorks Analytics', 'Participação em projetos de análise de dados com Python.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 1950.00, 'contato@dataworks.com', 'https://www.dataworks.com', '(31) 92222-0000', '2025-10-18 14:45:00'),
+(29, 'Estágio em SQL - São Paulo', 'DataWorks Analytics', 'Auxílio em consultas SQL.', 'SQL', 'Conhecimentos básicos em SQL.', 'Experiência prática.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@dataworks.com', 'https://www.dataworks.com', '(11) 91111-0000', '2025-10-19 13:30:00'),
+(30, 'Estágio em Java - Rio de Janeiro', 'DataWorks Analytics', 'Atuação em manutenção de sistemas Java.', 'Java', 'Conhecimentos básicos em Java.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Rio de Janeiro - RJ', 'Presencial', 1, 1700.00, 'contato@dataworks.com', 'https://www.dataworks.com', '(21) 97777-0000', '2025-10-19 15:00:00'),
+
+(31, 'Estágio em Go - Florianópolis', 'CloudForge', 'Atuação em projetos backend com Go.', 'Go', 'Conhecimentos básicos em Go.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Florianópolis - SC', 'Presencial', 1, 2500.00, 'contato@cloudforge.com', 'https://www.cloudforge.com', '(48) 96666-0000', '2025-10-18 00:14:01'),
+(32, 'Estágio em Go - Florianópolis', 'CloudForge', 'Auxílio em manutenção de sistemas Go.', 'Go', 'Conhecimentos básicos em Go.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Florianópolis - SC', 'Presencial', 1, 2600.00, 'contato@cloudforge.com', 'https://www.cloudforge.com', '(48) 96666-0000', '2025-10-18 10:45:00'),
+(33, 'Estágio em Python - Remoto', 'CloudForge', 'Participação em projetos Python.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 2450.00, 'contato@cloudforge.com', 'https://www.cloudforge.com', '(48) 96666-0000', '2025-10-18 15:30:00'),
+(34, 'Estágio em Go - São Paulo', 'CloudForge', 'Auxílio em desenvolvimento backend com Go.', 'Go', 'Conhecimentos básicos em Go.', 'Experiência prática.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@cloudforge.com', 'https://www.cloudforge.com', '(11) 95555-0000', '2025-10-19 09:30:00'),
+(35, 'Estágio em Java - Florianópolis', 'CloudForge', 'Atuação em manutenção de sistemas Java.', 'Java', 'Conhecimentos básicos em Java.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Florianópolis - SC', 'Presencial', 1, 2550.00, 'contato@cloudforge.com', 'https://www.cloudforge.com', '(48) 96666-0000', '2025-10-19 16:00:00'),
+
+(36, 'Estágio em Python - São José dos Campos', 'VisionTech AI', 'Atuação em projetos de IA com Python.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'São José dos Campos - SP', 'Presencial', 1, 2100.00, 'contato@visiontechai.com', 'https://www.visiontechai.com', '(12) 98888-0000', '2025-10-18 00:14:01'),
+(37, 'Estágio em Python - São José dos Campos', 'VisionTech AI', 'Auxílio em automação e análise de dados.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'São José dos Campos - SP', 'Presencial', 1, 2200.00, 'contato@visiontechai.com', 'https://www.visiontechai.com', '(12) 98888-0000', '2025-10-18 11:00:00'),
+(38, 'Estágio em R - Remoto', 'VisionTech AI', 'Participação em análise estatística com R.', 'R', 'Conhecimentos básicos em R.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 2300.00, 'contato@visiontechai.com', 'https://www.visiontechai.com', '(12) 98888-0000', '2025-10-18 16:30:00'),
+(39, 'Estágio em Python - Belo Horizonte', 'VisionTech AI', 'Auxílio em scripts e automação.', 'Python', 'Conhecimentos básicos em Python.', 'Experiência prática.', 'Estágio', '30h semanais', 'Belo Horizonte - MG', 'Presencial', 0, NULL, 'contato@visiontechai.com', 'https://www.visiontechai.com', '(31) 97777-0000', '2025-10-19 12:15:00'),
+(40, 'Estágio em SQL - São Paulo', 'VisionTech AI', 'Atuação em consultas SQL e relatórios.', 'SQL', 'Conhecimentos básicos em SQL.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 1, 2150.00, 'contato@visiontechai.com', 'https://www.visiontechai.com', '(11) 96666-0000', '2025-10-19 17:30:00'),
+
+(41, 'Estágio em C# - Brasília', 'CodeCraft Studio', 'Auxílio em desenvolvimento de sistemas C#.', 'C#', 'Conhecimentos básicos em C#.', 'Experiência prática.', 'Estágio', '30h semanais', 'Brasília - DF', 'Presencial', 0, NULL, 'contato@codecraftstudio.com', 'https://www.codecraftstudio.com', '(61) 95555-0000', '2025-10-18 00:14:01'),
+(42, 'Estágio em C# - Brasília', 'CodeCraft Studio', 'Atuação em manutenção de sistemas C#.', 'C#', 'Conhecimentos básicos em C#.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Brasília - DF', 'Presencial', 1, 1800.00, 'contato@codecraftstudio.com', 'https://www.codecraftstudio.com', '(61) 95555-0000', '2025-10-18 13:45:00'),
+(43, 'Estágio em JavaScript - Remoto', 'CodeCraft Studio', 'Participação em projetos front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript.', 'Experiência prática.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 0, NULL, 'contato@codecraftstudio.com', 'https://www.codecraftstudio.com', '(61) 95555-0000', '2025-10-18 17:00:00'),
+(44, 'Estágio em C# - São Paulo', 'CodeCraft Studio', 'Auxílio em desenvolvimento de sistemas C#.', 'C#', 'Conhecimentos básicos em C#.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 1, 1900.00, 'contato@codecraftstudio.com', 'https://www.codecraftstudio.com', '(11) 94444-0000', '2025-10-19 14:30:00'),
+(45, 'Estágio em Python - Rio de Janeiro', 'CodeCraft Studio', 'Atuação em scripts e automação com Python.', 'Python', 'Conhecimentos básicos em Python.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Rio de Janeiro - RJ', 'Presencial', 1, 1750.00, 'contato@codecraftstudio.com', 'https://www.codecraftstudio.com', '(21) 93333-0000', '2025-10-19 19:00:00'),
+
+(46, 'Estágio em PHP - Fortaleza', 'BrightFuture Devs', 'Atuação em desenvolvimento web com PHP.', 'PHP', 'Conhecimentos básicos em PHP, HTML e MySQL.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Fortaleza - CE', 'Presencial', 1, 1600.00, 'contato@brightfuturedevs.com', 'https://www.brightfuturedevs.com', '(85) 98888-0000', '2025-10-18 00:14:01'),
+(47, 'Estágio em PHP - Fortaleza', 'BrightFuture Devs', 'Auxílio em manutenção de sistemas PHP.', 'PHP', 'Conhecimentos básicos em PHP e versionamento Git.', 'Bolsa auxílio, VT.', 'Estágio', '30h semanais', 'Fortaleza - CE', 'Presencial', 1, 1700.00, 'contato@brightfuturedevs.com', 'https://www.brightfuturedevs.com', '(85) 98888-0000', '2025-10-18 14:00:00'),
+(48, 'Estágio em JavaScript - Remoto', 'BrightFuture Devs', 'Participação em projetos front-end com JavaScript.', 'JavaScript', 'Conhecimentos básicos em JavaScript, HTML e CSS.', 'Bolsa auxílio, auxílio home office.', 'Estágio', '30h semanais', 'Remoto', 'Remoto', 1, 1850.00, 'contato@brightfuturedevs.com', 'https://www.brightfuturedevs.com', '(85) 98888-0000', '2025-10-18 18:00:00'),
+(49, 'Estágio em PHP - São Paulo', 'BrightFuture Devs', 'Auxílio em desenvolvimento web com PHP.', 'PHP', 'Conhecimentos básicos em PHP.', 'Experiência prática.', 'Estágio', '30h semanais', 'São Paulo - SP', 'Presencial', 0, NULL, 'contato@brightfuturedevs.com', 'https://www.brightfuturedevs.com', '(11) 97777-0000', '2025-10-19 15:30:00'),
+(50, 'Estágio em SQL - Fortaleza', 'BrightFuture Devs', 'Atuação em consultas SQL e modelagem de dados.', 'SQL', 'Conhecimentos básicos em SQL.', 'Bolsa auxílio, VR.', 'Estágio', '30h semanais', 'Fortaleza - CE', 'Presencial', 1, 1650.00, 'contato@brightfuturedevs.com', 'https://www.brightfuturedevs.com', '(85) 98888-0000', '2025-10-19 20:00:00');
+
+empresa:
+CREATE TABLE empresa (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    razao_social VARCHAR(150) NOT NULL,
+    nome_fantasia VARCHAR(150),
+    cnpj VARCHAR(18) NOT NULL UNIQUE,
+    inscricao_estadual VARCHAR(20),
+    ano_fundacao YEAR,
+    email_corporativo VARCHAR(100),
+    telefone_comercial VARCHAR(20),
+    descricao TEXT
+);
+
+mensagens: 
+CREATE TABLE mensagens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_candidatura INT NOT NULL,
+    id_usuario INT NOT NULL,
+    id_empresa INT NOT NULL,
+    tipo ENUM('info', 'aviso', 'erro', 'sucesso') DEFAULT 'info',
+    mensagem TEXT NOT NULL,
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP
+);

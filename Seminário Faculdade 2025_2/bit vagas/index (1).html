@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitVagas</title>
+  <link rel="stylesheet" href="css/HomeStyle.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="login.php"><button type="button"><strong>Entrar</strong></button></a>
+      <h3><strong>BitVagas</strong></h3>
+      <button type="button" aria-label="Abrir menu" id="menu-btn">&#9776;</button>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h1><strong>O portal de vagas de estágios para você, <em>Programador</em>!</strong></h1>
+  </section>
+
+  <aside id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    <nav>
+      <ul>
+        <li><a href="#bemvindo"><strong>Bem-vindo</strong></a></li>
+        <li><a href="#sobre"><strong>Sobre Nós</strong></a></li>
+        <li><a href="#objetivo"><strong>Objetivo</strong></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="bemvindo">
+      <article>
+        <h1><strong>Bem-vindo ao Portal de Estágios BitVagas!</strong></h1>
+        <p>Encontre aqui as <strong>melhores oportunidades</strong> na área de programação, descubra <em>novos talentos</em> como empresa e se desenvolva com pessoas de diversas áreas da programação.</p>
+        <a href="vagas.php" class="btn"><strong>Buscar vagas</strong></a>
+      </article>
+    </section>
+
+    <section id="sobre">
+      <article>
+        <h2><strong>Sobre Nós</strong></h2>
+        <p>Nós somos um grupo de <strong>estudantes</strong> dos cursos das áreas de TI que tivemos a ideia de conectar outros estudantes como nós ao mercado de trabalho. Visamos a ideia de que muitos estudantes assim como nós são capazes de <strong>demonstrar habilidades</strong> e que empresas do mercado de trabalho tecnológico possam <em>encontrar novos talentos</em>. Tudo isso de uma forma interativa, onde o candidato pode colocar informações comportamentais e links de outras plataformas na qual o candidato tenha projetos. Isso é o que a família <strong>BitVagas</strong> te proporciona: não apenas a interatividade, mas também a <strong>oportunidade</strong> para empresas e candidatos!</p>
+      </article>
+    </section>
+
+    <section id="objetivo">
+      <article>
+        <h2><strong>Nosso Objetivo</strong></h2>
+        <p>Promover <strong>oportunidades de estágio em programação</strong>, oferecendo aos estudantes um espaço confiável para se aproximarem de empresas e construírem sua carreira. Com o intuito de poderem <strong>demonstrar suas habilidades</strong> e mostrar suas reais capacidades, seguimos sempre buscando o objetivo de conectar <em>empresas com programadores e estagiários</em>.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong>BitVagas</strong> - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const closeBtn = document.getElementById("close-btn");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

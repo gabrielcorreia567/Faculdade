@@ -1,0 +1,149 @@
+:root {
+  --cor-principal: #b71c1c;
+  --cor-principal-escura: #7f0000;
+  --cor-fundo: #120000;
+  --cor-cartao-fundo: rgba(255, 0, 0, 0.05);
+  --cor-borda-vidro: rgba(255, 0, 0, 0.2);
+  --cor-texto-principal: #ffffff;
+  --cor-destaque: #ff5252;
+  --cor-erro: #ef5350;
+  --sombra: 0 10px 25px rgba(255, 0, 0, 0.3);
+  --transicao: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at 30% 20%, #8b0000, #400000 60%, #120000 100%);
+  background-attachment: fixed;
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(40, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+header h2 {
+  color: var(--cor-destaque);
+  text-shadow: 0 0 8px rgba(255, 80, 80, 0.7);
+}
+
+header .btn-voltar {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  background: var(--cor-destaque);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transicao);
+}
+
+header .btn-voltar:hover {
+  background: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in;
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--cor-destaque);
+  font-size: 2.2rem;
+  text-shadow: 0 0 8px rgba(255, 50, 50, 0.7);
+}
+
+.empresa-card {
+  background: var(--cor-cartao-fundo);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--cor-borda-vidro);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  padding: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.empresa-card label {
+  color: var(--cor-destaque);
+  font-weight: bold;
+  display: block;
+  margin-top: 1.2rem;
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+}
+
+.dado-visualizacao {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.4rem;
+  transition: var(--transicao);
+}
+
+.dado-visualizacao:hover {
+  border-color: var(--cor-destaque);
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.4);
+}
+
+.descricao {
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.erro {
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--cor-erro);
+  font-weight: bold;
+  padding: 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid var(--cor-erro);
+}
+
+footer {
+  text-align: center;
+  background: rgba(40, 0, 0, 0.85);
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 -4px 15px rgba(255, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
